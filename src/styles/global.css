@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #0A84FF;
+}
+
+/* ── Dark tokens (default) ── */
+:root {
+  --bg:               #0a0a0a;
+  --bg-nav:           rgba(10, 10, 10, 0.80);
+  --bg-surface:       rgba(255, 255, 255, 0.02);
+  --bg-surface-hover: rgba(255, 255, 255, 0.04);
+  --bg-icon:          rgba(255, 255, 255, 0.05);
+
+  --border:           rgba(255, 255, 255, 0.07);
+  --border-hover:     rgba(255, 255, 255, 0.12);
+  --border-nav:       rgba(255, 255, 255, 0.06);
+  --border-icon:      rgba(255, 255, 255, 0.10);
+
+  --text-primary:     #ffffff;
+  --text-secondary:   #9ca3af;
+  --text-muted:       #6b7280;
+  --text-faint:       #4b5563;
+  --text-nav:         #ffffff;
+
+  --btn-bg:           #ffffff;
+  --btn-text:         #000000;
+  --btn-hover:        #e5e7eb;
+
+  --glow:             rgba(10, 132, 255, 0.10);
+  --glow-strong:      rgba(10, 132, 255, 0.12);
+
+  --screenshot-bg:     #111111;
+  --screenshot-border: rgba(255, 255, 255, 0.10);
+  --screenshot-chrome: rgba(255, 255, 255, 0.07);
+  --screenshot-text:   #374151;
+
+  --shadow: rgba(0, 0, 0, 0.60);
+}
+
+/* ── Light tokens ── */
+/* OS preference (only when no JS override is set) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]):not([data-theme="light"]) {
+    --bg:               #f5f5f7;
+    --bg-nav:           rgba(245, 245, 247, 0.85);
+    --bg-surface:       rgba(0, 0, 0, 0.025);
+    --bg-surface-hover: rgba(0, 0, 0, 0.045);
+    --bg-icon:          rgba(10, 132, 255, 0.08);
+
+    --border:           rgba(0, 0, 0, 0.08);
+    --border-hover:     rgba(0, 0, 0, 0.14);
+    --border-nav:       rgba(0, 0, 0, 0.08);
+    --border-icon:      rgba(10, 132, 255, 0.14);
+
+    --text-primary:     #0a0a0a;
+    --text-secondary:   #4b5563;
+    --text-muted:       #6b7280;
+    --text-faint:       #9ca3af;
+    --text-nav:         #0a0a0a;
+
+    --btn-bg:           #0A84FF;
+    --btn-text:         #ffffff;
+    --btn-hover:        #0071e3;
+
+    --glow:             rgba(10, 132, 255, 0.08);
+    --glow-strong:      rgba(10, 132, 255, 0.10);
+
+    --screenshot-bg:     #e8e8ed;
+    --screenshot-border: rgba(0, 0, 0, 0.10);
+    --screenshot-chrome: rgba(0, 0, 0, 0.06);
+    --screenshot-text:   #9ca3af;
+
+    --shadow: rgba(0, 0, 0, 0.10);
+  }
+}
+
+/* JS-forced light mode */
+:root[data-theme="light"] {
+  --bg:               #f5f5f7;
+  --bg-nav:           rgba(245, 245, 247, 0.85);
+  --bg-surface:       rgba(0, 0, 0, 0.025);
+  --bg-surface-hover: rgba(0, 0, 0, 0.045);
+  --bg-icon:          rgba(10, 132, 255, 0.08);
+
+  --border:           rgba(0, 0, 0, 0.08);
+  --border-hover:     rgba(0, 0, 0, 0.14);
+  --border-nav:       rgba(0, 0, 0, 0.08);
+  --border-icon:      rgba(10, 132, 255, 0.14);
+
+  --text-primary:     #0a0a0a;
+  --text-secondary:   #4b5563;
+  --text-muted:       #6b7280;
+  --text-faint:       #9ca3af;
+  --text-nav:         #0a0a0a;
+
+  --btn-bg:           #0A84FF;
+  --btn-text:         #ffffff;
+  --btn-hover:        #0071e3;
+
+  --glow:             rgba(10, 132, 255, 0.08);
+  --glow-strong:      rgba(10, 132, 255, 0.10);
+
+  --screenshot-bg:     #e8e8ed;
+  --screenshot-border: rgba(0, 0, 0, 0.10);
+  --screenshot-chrome: rgba(0, 0, 0, 0.06);
+  --screenshot-text:   #9ca3af;
+
+  --shadow: rgba(0, 0, 0, 0.10);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
