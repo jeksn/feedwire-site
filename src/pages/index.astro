@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import screenshot from '../assets/screenshot.png';
+import screenshotLight from '../assets/screenshot-light.png';
 
 const features = [
   {
@@ -133,7 +134,8 @@ const features = [
           <!-- Screenshot area -->
           <div class="flex items-center justify-center"
                style="background: var(--screenshot-bg);">
-            <img src={screenshot.src} alt="Feedwire app screenshot" class="w-full block" />
+            <img src={screenshot.src} alt="Feedwire app screenshot" class="screenshot-dark w-full block" />
+            <img src={screenshotLight.src} alt="Feedwire app screenshot" class="screenshot-light w-full block" />
           </div>
         </div>
         <!-- Glow under the window -->
@@ -315,6 +317,18 @@ const features = [
   .feature-card:hover {
     border-color: var(--border-hover);
     background: var(--bg-surface-hover);
+  }
+
+  /* Screenshots: show dark by default, swap on light theme */
+  .screenshot-light { display: none; }
+  .screenshot-dark  { display: block; }
+
+  :root[data-theme="light"] .screenshot-light { display: block; }
+  :root[data-theme="light"] .screenshot-dark  { display: none; }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]):not([data-theme="light"]) .screenshot-light { display: block; }
+    :root:not([data-theme="dark"]):not([data-theme="light"]) .screenshot-dark  { display: none; }
   }
 </style>
 
