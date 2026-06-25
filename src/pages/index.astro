@@ -13,21 +13,28 @@ const features = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
     title: 'Instant updates',
     description: 'Background refresh keeps your feeds current without interrupting your workflow. New articles are there when you look.',
+    pro: true,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
-    title: 'Built for Mac',
-    description: 'A native macOS experience with keyboard shortcuts, menu bar access, and notifications — feels right at home alongside your other apps.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+    title: 'Not another Electron app.',
+    description: 'Built with Tauri, not Electron. Feedwire is a small, native app — not a browser pretending to be one. Fast to launch, light on memory, and feels like it belongs on your Mac.',
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/><path d="M3 16.2V21m0 0h4.8M3 21l6-6"/><path d="M21 7.8V3m0 0h-4.8M21 3l-6 6"/><path d="M3 7.8V3m0 0h4.8M3 3l6 6"/></svg>`,
-    title: 'Distraction-free reading',
-    description: 'Reader mode strips away ads and clutter so you can focus on the writing. Just text, the way it was meant to be read.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>`,
+    title: 'YouTube as a feed',
+    description: 'Subscribe to any YouTube channel and get new videos alongside your other feeds — no algorithm, no recommendations, just the channels you chose. Shorts can be hidden with a single toggle.',
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
-    title: 'Save what you love',
-    description: 'Star articles and come back to them whenever you want. Build a personal archive of the things worth keeping.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+    title: 'Bookmarks',
+    description: 'Save articles with a click and find them again later. Simple bookmarking, nothing more.',
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>`,
+    title: 'Filter by URL rules',
+    description: 'Write your own URL patterns to hide unwanted entries from any feed. Block specific sections, topics, or domains without touching the source.',
+    pro: true,
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
@@ -92,10 +99,10 @@ const features = [
       <section class="inner pt-[200px] pb-32 text-center">
         <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
             style="color: var(--text-primary); line-height: 1.15;">
-          Read what matters.<br />Nothing else.
+          A lightweight, native feed reader that respects your Mac.
         </h1>
         <p class="mt-5 text-base leading-relaxed mx-auto max-w-lg" style="color: var(--text-secondary);">
-          Feedwire is a native macOS feed reader that keeps you in the loop — fast, focused, and free of noise.
+          Feedwire brings RSS, Atom, and YouTube channels into one blazing-fast, private space. Engineered to be exceptionally light on memory—with no mandatory accounts, no tracking, and no noise.
         </p>
         <div id="download" class="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
@@ -138,7 +145,12 @@ const features = [
               <div class="mb-3" style="color: #0A84FF;">
                 <Fragment set:html={feature.icon} />
               </div>
-              <h3 class="text-sm font-semibold mb-1.5" style="color: var(--text-primary);">{feature.title}</h3>
+              <div class="flex items-center gap-2 mb-1.5">
+                <h3 class="text-sm font-semibold" style="color: var(--text-primary);">{feature.title}</h3>
+                {feature.pro && (
+                  <span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="background: var(--bg-surface); border: 1px solid var(--border); color: #0A84FF;">Pro</span>
+                )}
+              </div>
               <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{feature.description}</p>
             </div>
           ))}
