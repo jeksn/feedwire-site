@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import screenshot from '../assets/screenshot.png';
 import screenshotLight from '../assets/screenshot-light.png';
+import logo from '../assets/logo.png';
 
 const features = [
   {
@@ -50,7 +51,7 @@ const features = [
           style="background: var(--bg-nav); border-bottom: 1px solid var(--border-nav);">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
       <div class="flex items-center gap-2">
-        <img src="/src/assets/logo.png" class="h-6 w-6" alt="Feedwire logo">
+        <img src={logo.src} class="h-6 w-6" alt="Feedwire logo">
         <span class="text-sm font-semibold tracking-tight" style="color: var(--text-nav);">Feedwire</span>
       </div>
       <div class="flex items-center gap-3">
@@ -253,7 +254,7 @@ const features = [
     <footer class="section-divider">
       <div class="inner py-7 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style="color: var(--text-faint);">
         <div class="flex items-center gap-2">
-          <img src="/src/assets/logo.png" class="size-4" alt="Feedwire logo">
+          <img src={logo.src} class="size-4" alt="Feedwire logo">
           <span>Feedwire</span>
         </div>
         <span>© {new Date().getFullYear()} Feedwire. All rights reserved.</span>
