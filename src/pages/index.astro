@@ -171,21 +171,30 @@ const features = [
         <div class="inner py-12">
           <h2 class="section-label">Pricing</h2>
         </div>
-        <div class="pricing-grid">
+
+        <!-- Beta banner -->
+        <div class="inner py-10" style="border-bottom: 1px solid var(--border);">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="rounded px-2 py-0.5 text-[11px] font-semibold" style="background: rgba(10,132,255,0.12); color: #0A84FF;">Beta</span>
+            <h3 class="text-base font-semibold" style="color: var(--text-primary);">Free during beta</h3>
+          </div>
+          <p class="text-sm max-w-md" style="color: var(--text-muted);">
+            Feedwire is free to use during beta, with all features unlocked. A paid Pro tier will be introduced later — early users will be taken care of.
+          </p>
+        </div>
+
+        <!-- Future tiers preview (faded — not yet in effect) -->
+        <div class="pricing-grid" style="opacity: 0.5;">
 
           <!-- Free -->
           <div class="inner py-8 flex flex-col" style="border-right: 1px solid var(--border);">
             <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color: var(--text-muted);">Free</p>
-            <div class="flex items-baseline gap-1 mb-1">
-              <span class="text-3xl font-bold" style="color: var(--text-primary);">$0</span>
-            </div>
             <p class="text-sm mb-7" style="color: var(--text-muted);">Free forever. No credit card needed.</p>
             <ul class="space-y-2.5 mb-8 flex-1">
               {[
-                'Up to X feeds',        /* TODO: set feed limit */
-                'Basic article reader',
+                'Up to 25 feeds',
+                'Bookmarks',
                 'Manual refresh',
-                'Starred articles',
               ].map(item => (
                 <li class="flex items-center gap-2.5 text-sm" style="color: var(--text-secondary);">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -193,48 +202,31 @@ const features = [
                 </li>
               ))}
             </ul>
-            <a
-              href="https://github.com/jeksn/feedwire/releases"
-              class="block w-full rounded-lg py-2.5 text-center text-sm font-semibold transition"
-              style="border: 1px solid var(--border-hover); color: var(--text-primary);"
-            >
-              Download free
-            </a>
+            <p class="text-xs" style="color: var(--text-faint);">Available after beta</p>
           </div>
 
           <!-- Pro -->
           <div class="inner py-8 flex flex-col">
             <div class="flex items-center gap-2 mb-4">
               <p class="text-xs font-semibold uppercase tracking-widest" style="color: #0A84FF;">Pro</p>
-              <span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-muted);">Coming soon</span>
+              <span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="background: var(--bg-surface); border: 1px solid var(--border); color: var(--text-muted);">Planned</span>
             </div>
-            <div class="flex items-baseline gap-1.5 mb-1">
-              <span class="text-3xl font-bold" style="color: var(--text-primary);">$XX</span> <!-- TODO: set price -->
-              <span class="text-sm" style="color: var(--text-muted);">one-time</span>
-            </div>
-            <p class="text-sm mb-7" style="color: var(--text-muted);">Pay once, own it forever.</p>
+            <p class="text-sm mb-7" style="color: var(--text-muted);">One-time purchase. Pay once, own it forever.</p>
             <ul class="space-y-2.5 mb-8 flex-1">
               {[
                 'Unlimited feeds',
                 'Background auto-refresh',
-                'Full reader mode',
-                'Collections & folders',
-                'iCloud sync',          /* TODO: confirm if planned */
+                'Folders',
+                'Filter by URL rules',
                 'Priority support',
               ].map(item => (
-                <li class="flex items-center gap-2.5 text-sm" style="color: var(--text-secondary);">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A84FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <li class="flex items-center gap-2.5 text-sm" style="color: var(--text-faint);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   {item}
                 </li>
               ))}
             </ul>
-            <button
-              disabled
-              class="block w-full rounded-lg py-2.5 text-center text-sm font-semibold cursor-not-allowed"
-              style="background: #0A84FF; color: #fff; opacity: 0.4;"
-            >
-              Coming soon
-            </button>
+            <p class="text-xs" style="color: var(--text-faint);">Coming after beta</p>
           </div>
 
         </div>
@@ -244,8 +236,8 @@ const features = [
       <section class="section-divider">
         <div class="inner py-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div>
-            <h2 class="text-lg font-semibold" style="color: var(--text-primary);">Start reading smarter.</h2>
-            <p class="mt-1 text-sm" style="color: var(--text-muted);">Free to download. Upgrade to Pro whenever you're ready.</p>
+            <h2 class="text-lg font-semibold" style="color: var(--text-primary);">Try Feedwire during beta.</h2>
+            <p class="mt-1 text-sm" style="color: var(--text-muted);">Free to use now. Pro features coming later.</p>
           </div>
           <a
             href="https://github.com/jeksn/feedwire/releases"
