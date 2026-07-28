@@ -8,23 +8,23 @@ const features = [
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>`,
     title: 'All your feeds, one place',
-    description: 'Subscribe to any RSS or Atom feed. Feedwire keeps everything organised and in sync, so you never miss what matters.',
+    description: 'Subscribe to RSS or Atom feeds. Feedwire keeps everything organised and in sync, so you never miss what matters.',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
     title: 'Instant updates',
-    description: 'Background refresh keeps your feeds current without interrupting your workflow. New articles are there when you look.',
-    pro: true,
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
-    title: 'Not another Electron app.',
-    description: 'Built with Tauri, not Electron. Feedwire is a small, native app — not a browser pretending to be one. Fast to launch, light on memory, and feels like it belongs on your Mac.',
+    description: 'Background auto-refresh keeps your feeds current without interrupting your workflow. New articles are there when you look.',
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>`,
     title: 'YouTube as a feed',
     description: 'Subscribe to any YouTube channel and get new videos alongside your other feeds — no algorithm, no recommendations, just the channels you chose. Shorts can be hidden with a single toggle.',
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>`,
+    title: 'Organize with folders',
+    description: 'Group feeds into folders to keep things tidy. News, tech, YouTube — whatever makes sense to you.',
+    pro: true,
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
@@ -41,6 +41,16 @@ const features = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
     title: 'Private by default',
     description: 'No account required. Your feeds and reading history stay on your device. Nothing is sent to a server.',
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+    title: 'Small and native',
+    description: 'Built with Rust and Tauri. A tiny download that launches instantly and stays out of the way.',
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><polyline points="21 4 21 10 15 10"/></svg>`,
+    title: 'More coming soon',
+    description: 'Feedwire is actively developed. New features and improvements ship regularly — this is just the beginning.',
   },
 ];
 ---
@@ -147,7 +157,7 @@ const features = [
               <div class="flex items-center gap-2 mb-1.5">
                 <h3 class="text-sm font-semibold" style="color: var(--text-primary);">{feature.title}</h3>
                 {feature.pro && (
-                  <span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="background: var(--bg-surface); border: 1px solid var(--border); color: #0A84FF;">Pro</span>
+                  <span class="rounded px-1.5 py-0.5 text-[10px] font-semibold" style="background: var(--bg-surface); border: 1px solid var(--border); color: #0A84FF;">Pro · free during beta</span>
                 )}
               </div>
               <p class="text-sm leading-relaxed" style="color: var(--text-muted);">{feature.description}</p>
